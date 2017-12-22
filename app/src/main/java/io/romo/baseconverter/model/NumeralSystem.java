@@ -2,7 +2,8 @@ package io.romo.baseconverter.model;
 
 public enum NumeralSystem {
     Binary(2),
-    Decimal(10);
+    Decimal(10),
+    Hexadecimal(16);
 
     private int radix;
 
