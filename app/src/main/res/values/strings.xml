@@ -1,3 +1,10 @@
 <resources>
+
+    <!-- global -->
     <string name="app_name">Base Converter</string>
+
+    <!-- base converter -->
+    <string name="decimal_abbreviation">Dec</string>
+    <string name="binary_abbreviation">Bin</string>
+
 </resources>

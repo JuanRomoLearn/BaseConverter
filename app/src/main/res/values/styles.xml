@@ -1,11 +1,25 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="BaseConverter" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="BaseConverter.BaseConverter">
+
+    </style>
+
+    <style name="NumeralSystemLabel">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/numeral_system_label_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">@dimen/spacing_normal</item>
+    </style>
+
+    <style name="NumberInput">
+        <item name="android:textSize">@dimen/number_input_text_size</item>
+        <item name="android:layout_margin">@dimen/spacing_normal</item>
     </style>
 
 </resources>

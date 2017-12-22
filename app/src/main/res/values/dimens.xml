@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- standard metrics -->
+    <dimen name="spacing_normal">8dp</dimen>
+
+    <!-- base converter -->
+    <dimen name="numeral_system_label_text_size">24sp</dimen>
+    <dimen name="number_input_text_size">24sp</dimen>
+
+</resources>
