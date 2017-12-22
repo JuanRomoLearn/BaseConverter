@@ -12,7 +12,7 @@
         android:theme="@style/BaseConverter">
 
         <activity
-            android:name=".BaseConverterActivity"
+            android:name=".activity.BaseConverterActivity"
             android:theme="@style/BaseConverter.BaseConverter"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
