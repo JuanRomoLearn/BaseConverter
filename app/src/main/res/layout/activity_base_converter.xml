@@ -24,17 +24,27 @@
         app:layout_constraintBottom_toTopOf="@+id/binary_hexadecimal_split"
         app:layout_constraintEnd_toStartOf="@+id/label_input_split"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/decimal_binary_split" />
+        app:layout_constraintTop_toBottomOf="@+id/decimal_binary_split" />
 
     <TextView
         style="@style/NumeralSystemLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hexadecimal_abbreviation"
+        app:layout_constraintBottom_toTopOf="@id/hexadecimal_octal_split"
+        app:layout_constraintEnd_toStartOf="@+id/label_input_split"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/binary_hexadecimal_split" />
+
+    <TextView
+        style="@style/NumeralSystemLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/octal_abbreviation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/label_input_split"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/binary_hexadecimal_split" />
+        app:layout_constraintTop_toBottomOf="@+id/hexadecimal_octal_split" />
 
     <android.support.constraint.Guideline
         android:id="@+id/label_input_split"
@@ -51,7 +61,7 @@
         android:digits="0123456789"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/decimal_binary_split"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/label_input_split"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="0123456789" />
@@ -61,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <EditText
         android:id="@+id/binary_number_input"
@@ -73,7 +83,7 @@
         app:layout_constraintBottom_toTopOf="@+id/binary_hexadecimal_split"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/label_input_split"
-        app:layout_constraintTop_toTopOf="@+id/decimal_binary_split"
+        app:layout_constraintTop_toBottomOf="@+id/decimal_binary_split"
         tools:text="01" />
 
     <android.support.constraint.Guideline
@@ -81,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.50" />
 
     <EditText
         android:id="@+id/hexadecimal_number_input"
@@ -89,10 +99,31 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:digits="0123456789ABCDEFabcdef"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/hexadecimal_octal_split"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/label_input_split"
+        app:layout_constraintTop_toBottomOf="@+id/binary_hexadecimal_split"
+        tools:text="0123456789ABCDEF" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/hexadecimal_octal_split"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <EditText
+        android:id="@+id/octal_number_input"
+        style="@style/NumberInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:digits="01234567"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/label_input_split"
-        app:layout_constraintTop_toTopOf="@+id/binary_hexadecimal_split"
-        tools:text="0123456789ABCDEF" />
+        app:layout_constraintTop_toBottomOf="@+id/hexadecimal_octal_split"
+        tools:text="01234567" />
 
 </android.support.constraint.ConstraintLayout>

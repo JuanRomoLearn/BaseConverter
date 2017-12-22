@@ -20,6 +20,8 @@
     <style name="NumberInput">
         <item name="android:textSize">@dimen/number_input_text_size</item>
         <item name="android:layout_margin">@dimen/spacing_normal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:imeOptions">actionDone</item>
     </style>
 
 </resources>
