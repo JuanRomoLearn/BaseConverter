@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 import io.romo.baseconverter.R;
+import io.romo.baseconverter.model.NumeralSystem;
 import io.romo.baseconverter.util.BaseConverterUtils;
 
 public class BaseConverterActivity extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class BaseConverterActivity extends AppCompatActivity {
     private EditText decimalNumberInput;
     private EditText binaryNumberInput;
     private EditText hexadecimalNumberInput;
-    private EditText ocatalNumberInput;
+    private EditText octalNumberInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,18 @@ public class BaseConverterActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (getCurrentFocus() == decimalNumberInput) {
-                    binaryNumberInput.setText(BaseConverterUtils.convertDecimalStringToBinaryString(s.toString()));
-                    hexadecimalNumberInput.setText(BaseConverterUtils.convertDecimalStringToHexadecimalString(s.toString()));
-                    ocatalNumberInput.setText(BaseConverterUtils.convertDecimalStringToOctalString(s.toString()));
+
+                    binaryNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Decimal, NumeralSystem.Binary));
+
+                    hexadecimalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Decimal, NumeralSystem.Hexadecimal));
+
+                    octalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Decimal, NumeralSystem.Octal));
                 }
             }
         });
@@ -59,9 +69,18 @@ public class BaseConverterActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (getCurrentFocus() == binaryNumberInput) {
-                    decimalNumberInput.setText(BaseConverterUtils.convertBinaryStringToDecimalString(s.toString()));
-                    hexadecimalNumberInput.setText(BaseConverterUtils.convertBinaryStringToHexadecimalString(s.toString()));
-                    ocatalNumberInput.setText(BaseConverterUtils.convertBinaryStringToOctalString(s.toString()));
+
+                    decimalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Binary, NumeralSystem.Decimal));
+
+                    hexadecimalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Binary, NumeralSystem.Hexadecimal));
+
+                    octalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Binary, NumeralSystem.Octal));
                 }
             }
         });
@@ -82,15 +101,24 @@ public class BaseConverterActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (getCurrentFocus() == hexadecimalNumberInput) {
-                    decimalNumberInput.setText(BaseConverterUtils.convertHexadecimalStringToDecimalString(s.toString()));
-                    binaryNumberInput.setText(BaseConverterUtils.convertHexadecimalStringToBinaryString(s.toString()));
-                    ocatalNumberInput.setText(BaseConverterUtils.convertHexadecimalStringToOctalString(s.toString()));
+
+                    decimalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Hexadecimal, NumeralSystem.Decimal));
+
+                    binaryNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Hexadecimal, NumeralSystem.Binary));
+
+                    octalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Hexadecimal, NumeralSystem.Octal));
                 }
             }
         });
 
-        ocatalNumberInput = findViewById(R.id.octal_number_input);
-        ocatalNumberInput.addTextChangedListener(new TextWatcher() {
+        octalNumberInput = findViewById(R.id.octal_number_input);
+        octalNumberInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -103,10 +131,19 @@ public class BaseConverterActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (getCurrentFocus() == ocatalNumberInput) {
-                    decimalNumberInput.setText(BaseConverterUtils.convertOctalStringToDecimalString(s.toString()));
-                    binaryNumberInput.setText(BaseConverterUtils.convertOctalStringToBinaryString(s.toString()));
-                    hexadecimalNumberInput.setText(BaseConverterUtils.convertOctalStringToHexadecimalString(s.toString()));
+                if (getCurrentFocus() == octalNumberInput) {
+
+                    decimalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Octal, NumeralSystem.Decimal));
+
+                    binaryNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Octal, NumeralSystem.Binary));
+
+                    hexadecimalNumberInput.setText(
+                            BaseConverterUtils.convertNumberBase(
+                                    s.toString(), NumeralSystem.Octal, NumeralSystem.Hexadecimal));
                 }
             }
         });
