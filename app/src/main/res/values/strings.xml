@@ -8,5 +8,6 @@
     <string name="binary_abbreviation">Bin</string>
     <string name="hexadecimal_abbreviation">Hex</string>
     <string name="octal_abbreviation">Oct</string>
+    <string name="clear">Clear</string>
 
 </resources>
